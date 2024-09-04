@@ -48,4 +48,4 @@ Function: Implement real-time notifications to alert employees about new booking
 * Security: The implementation of authentication and authorization ensures that sensitive data is protected.
 
 ## EER Diagram
-you can see EER Diagram of the database in the following link: EER Diagrama_web_BarberClassiCut
+you can see EER Diagram of the database in the following link: EER Diagrama_web_BarberClassiCut.pdf
