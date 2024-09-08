@@ -17,27 +17,27 @@ The objective of this project is to create an efficient and easy-to-use tool tha
 Three-Tier Architecture
 This architecture divides the application into three main layers: presentation, business logic, and data.
 
-Presentation Layer (Frontend):
+* Presentation Layer (Frontend):
 Technologies: HTML, CSS, JavaScript
 Function: This layer will take care of the user interface and customer interaction. This is where users will make reservations, employees will manage their schedules, and the administrator will oversee operations.
 
-Business Logic Layer (Backend):
+* Business Logic Layer (Backend):
 Technologies: Flask (Python)
 Function: This layer will handle the application logic, business rules, and communication between the presentation layer and the data layer. This is where reservations will be processed, appointment statuses will be updated, and notifications will be managed.
 
-Data Layer (Database):
+* Data Layer (Database):
 Technologies: MySQL
 Function: This layer will be responsible for data storage and management. This is where bookings, employee details, earnings, and other relevant data are stored.
 
-RESTful API:
+* RESTful API:
 Technologies: Flask-RESTful to create APIs
 Function: Create a RESTful API that will allow communication between the frontend and the backend. This will facilitate scalability and integration with other applications or services in the future.
 
-Authentication and Authorization:
+* Authentication and Authorization:
 Technologies: Flask-Security, Flask-Login, Werkzeug.Security
 Function: Implement an authentication and authorization system to ensure that only authorized users can access certain functionalities (for example, the administration panel).
 
-Real-Time Notifications:
+* Real-Time Notifications:
 Technologies: Flask-SocketIO
 Function: Implement real-time notifications to alert employees about new bookings or changes in appointments.
 

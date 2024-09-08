@@ -16,14 +16,14 @@ def createApp():
     app.config["MYSQL_CURSORCLASS"] = "DictCursor"
 
     db.init_app(app)
-    login_manager.init_app(app)
+    # login_manager.init_app(app)
 
     from .main import main
-    from .auth import auth
-    from .api import api
+    # from .auth import auth
+    # from .api import api
 
     app.register_blueprint(main)
-    app.register_blueprint(auth)
-    app.register_blueprint(api)
+    # app.register_blueprint(auth)
+    # app.register_blueprint(api)
     
     return app

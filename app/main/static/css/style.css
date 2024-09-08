@@ -1,0 +1,117 @@
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+/************************************************
+****************STYLE GENERAL********************
+************************************************/
+ul{
+    list-style: none;
+}
+
+/************************************************
+****************STYLE ADMIN**********************
+************************************************/
+.container_dashboard{
+    background: #f4f4f5;
+    width: 100%;
+    height: 100%;
+}
+
+/************************************************
+************STYLE ADMIN IN MOBILES***************
+************************************************/
+.mobile{
+    background: rgba(255, 255, 255, 0.74);
+    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+.offcanvas-header{
+    border-bottom: 1px solid #c9c9c999;
+    box-shadow: 0px 1px 6px 1px rgba(0, 0, 0, 0.2);
+}
+
+.container_links_nav_dashboard{
+    padding: 20px 0 0 0;
+}
+
+.container_links_nav_dashboard li{
+    cursor: pointer;
+    color: #64646a;
+    margin-bottom: 20px;
+    padding: 15px 7px;
+}
+
+.container_links_nav_dashboard li span{
+    margin-left: 12px;
+}
+
+.container_links_nav_dashboard li:hover{
+    background-color: #f4f4f5;
+    color: #000000;
+    border-radius: 6px;
+}
+
+.header_menu_dashboard,.body_menu_dashboard,.footer_menu_dashboard{
+    display: none;
+}
+
+/************************************************
+**************STYLE IN TABLETS*******************
+************************************************/
+@media (min-width:768px) {
+    /***************************************
+    *************DASHBOARD ADMIN************
+    ***************************************/
+    .mobile{
+        display: none;
+    }
+
+    .container_dashboard{
+        display: flex;
+        background: none;
+    }
+
+    nav{
+        border-right: 1px solid #c9c9c999;
+        width: 280px;
+    }
+
+    .header_menu_dashboard,.body_menu_dashboard,.footer_menu_dashboard{
+        display: block;
+    }
+
+    .header_menu_dashboard{
+        display: flex;
+        align-items: center;
+        padding: 15px 0 15px 20px;
+        border-bottom: 1px solid #c9c9c999;
+    }
+
+    .container_links_nav_dashboard{
+        padding: 20px 0 0 15px;
+    }
+
+    .footer_menu_dashboard{
+        margin-top: 70%;
+        padding-left: 25px;
+    }
+
+    .footer_menu_dashboard button{
+        border: none;
+        background: none;
+        color: #64646a;
+        font-size: 17px;
+    }
+
+    .footer_menu_dashboard button:hover{
+        color: rgb(186, 32, 32);
+    }
+
+    .dashboard_content{
+        border: 1px solid red;
+        flex-grow: 1;
+        background: #f4f4f5;
+    }
+}
