@@ -1,29 +1,114 @@
+/************************************************
+****************STYLES GENERAL*******************
+************************************************/
 html,body{
     width: 100%;
     height: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-/************************************************
-****************STYLE GENERAL********************
-************************************************/
 ul{
     list-style: none;
 }
 
 /************************************************
-****************STYLE ADMIN**********************
+****************STYLES TABLE*********************
+************************************************/
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead{
+    border-bottom: 1px solid #bfbfbf;
+}
+
+th, td {
+    padding: 15px 20px 10px 0;
+    text-align: center;
+}
+
+/************************************************
+**************STYLES CALENDAR********************
+************************************************/
+.calendar {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+  
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+  
+.button_calendar{
+    border: none;
+    padding: 0 4px;
+    background: none;
+    cursor: pointer;
+}
+  
+#monthYear{
+    font-size: 17px;
+}
+  
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+}
+  
+.day:hover{
+    background-color: #dadada62;
+    border-radius: 7px;
+    cursor: pointer;
+}
+  
+.day, .weekday {
+    padding: 5px;
+    text-align: center;
+}
+  
+.weekday {
+    color: #656565e4;
+}
+  
+.inactive {
+    color: #c1c1c1;
+}
+  
+.inactive:hover{
+    background: none;
+}
+  
+.today {
+    background-color: #dadada8b;
+    border-radius: 7px;
+    color: black;
+    font-weight: 700;
+}
+
+
+/************************************************
+****************STYLES ADMIN*********************
 ************************************************/
 .container_dashboard{
     background: #f4f4f5;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
 }
 
 /************************************************
-************STYLE ADMIN IN MOBILES***************
+*************NAV ADMIN IN MOBILES****************
 ************************************************/
 .mobile{
-    background: rgba(255, 255, 255, 0.74);
+    background: #ffffffbd;
     box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.2);
 }
 
@@ -58,10 +143,64 @@ ul{
 }
 
 /************************************************
+************CONTENT DASHBOARD ADMIN**************
+************************************************/
+#dashboard_content{
+    padding: 35px 20px 35px 20px;
+}
+
+.header_appoinment ul{
+    display: flex;
+    padding: 0;
+    margin-top: 35px;
+}
+
+.header_appoinment ul li{
+    background: #ffffff;
+    border: 1px solid #c9c9c999;
+    margin-right: 20px;
+    padding: 5px 20px;
+    border-radius: 6px;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.calendar {
+    margin-top: 40px;
+}
+
+.viewAppointment{
+    height: 300px;
+    background: white;
+    padding: 12px;
+    border-radius: 6px;
+    box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.2);
+    margin-top: 40px;
+    overflow-y: auto;
+}
+
+#appoinmentDate{
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.container_links_nav_dashboard li.active{
+    background-color: #f4f4f5;
+    color: #000000;
+    border-radius: 6px;
+}
+
+@media (min-width:600px){
+    #dashboard_content{
+        padding: 35px 60px;
+    }
+}
+
+/************************************************
 **************STYLE IN TABLETS*******************
 ************************************************/
 @media (min-width:768px) {
-    /***************************************
+    /* **************************************
     *************DASHBOARD ADMIN************
     ***************************************/
     .mobile{
@@ -76,6 +215,7 @@ ul{
     nav{
         border-right: 1px solid #c9c9c999;
         width: 280px;
+        position: relative;
     }
 
     .header_menu_dashboard,.body_menu_dashboard,.footer_menu_dashboard{
@@ -94,7 +234,8 @@ ul{
     }
 
     .footer_menu_dashboard{
-        margin-top: 70%;
+        position: absolute;
+        bottom: 10%;
         padding-left: 25px;
     }
 
@@ -109,9 +250,61 @@ ul{
         color: rgb(186, 32, 32);
     }
 
-    .dashboard_content{
-        border: 1px solid red;
+    #dashboard_content{
         flex-grow: 1;
         background: #f4f4f5;
+        padding: 40px 20px 40px 20px;
+    }
+
+    #dashboard_content{
+        padding: 35px 20px 35px 20px;
+    }
+    
+    .viewAppointment{
+        height: 370px;
+    }
+}
+
+/************************************************
+**************STYLE IN LAPTOPS*******************
+************************************************/
+@media (min-width: 1020px) {
+    /* **************************************
+    *************DASHBOARD ADMIN************
+    ***************************************/
+    #dashboard_content{
+        padding: 20px 25px 20px 25px;
+    }
+
+    .header_appoinment{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .body_appoinment{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 100px;
+        margin-top: 50px;
+        background-color: white;
+        padding: 20px 20px;
+        border-radius: 6px;
+    }
+
+    .calendar {
+        margin-top: 0;
+        width: 300px;
+        height: 325px;
+        border-radius: none;
+        box-shadow: none;
+    }
+
+    .viewAppointment{
+        margin-top: -5px;
+        flex: 1;
+        height: 320px;
+        border: 1px solid #c9c9c999;
     }
 }
