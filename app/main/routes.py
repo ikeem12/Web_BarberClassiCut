@@ -5,6 +5,10 @@ from . import main
 def index():
     return render_template('index.html')
 
+@main.route('/login.html')
+def login():
+    return render_template('login.html')
+
 @main.route('/admin')
 def admin():
     return render_template('admin.html')
