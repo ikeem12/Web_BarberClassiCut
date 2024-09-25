@@ -20,6 +20,10 @@ ul{
     list-style: none;
 }
 
+.btn:hover{
+    border: none;
+}
+
 /************************************************
 ***************STYLES TABLE**********************
 ************************************************/
@@ -178,6 +182,7 @@ th, td {
 /************************************************
 ****************STYLES ADMIN*********************
 ************************************************/
+
 .container_dashboard{
     background: #f4f4f5;
     width: 100%;
@@ -267,6 +272,114 @@ th, td {
     border-radius: 6px;
 }
 
+/*   REVENUE DASHBOARD   */
+
+.container_earnings{
+    border-radius: 6px;
+    box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background: white;
+}
+
+#dashboard_content header{
+    margin-bottom: 40px;
+}
+
+.modal-body{
+    background: #f4f4f5;
+}
+
+.header_earnings{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.header_earnings h3{
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.container_earnings p{
+    font-size: 30px;
+}
+
+.footer_revenue button{
+    margin-top: 5px;
+    background: none;
+    padding: 0;
+    border: none;
+    color: rgb(0, 15, 154);
+    text-decoration: underline;
+}
+
+.footer_revenue button:hover{
+    background: none;
+    color: rgb(0, 15, 154);
+}
+
+.footer_revenue button:active{
+    background: none !important;
+    color: rgb(0, 15, 154) !important;
+}
+
+/* REVENUE MODAL DASHBOARD */
+
+.container_earnings_modal{
+    border: 1px solid #2727273d;
+    border-radius: 6px;
+    padding: 15px 15px 10px 15px;
+    margin-bottom: 20px;
+    background: white;
+}
+
+.modal{
+    padding: 50px 0 20px;
+}
+
+.modal-dialog{
+    height: 510px;
+}
+
+.container_earnings_modal p{
+    margin-top: -8px;
+    font-size: 25px;
+}
+
+.footer_revenue_modal{
+    margin-top: -8px;
+}
+
+/************************************************
+****************STYLES EMPLOYEE******************   
+************************************************/
+
+.header_menu_schedule div{
+    display: flex;
+    width: 100%;
+    margin-bottom: 40px;
+    background: #ffffffbd;
+    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.2);
+    padding: 15px 15px;
+}
+
+.header_menu_schedule div button{
+    background: none;
+    border: none;
+}
+
+.header_menu_schedule div h3{
+    margin-left: 70px;
+}
+
+.button_add{
+    margin-left: 20px;
+    text-align: center;
+}
+
 /* Responsive styling for screens of at least 600px */
 @media (min-width:600px){
 
@@ -277,7 +390,28 @@ th, td {
 
     /*  DASHBOARD ADMIN */
     #dashboard_content{
-        padding: 35px 60px;
+        padding: 35px 90px;
+    }
+
+    /*   REVENUE DASHBOARD   */
+    .footer_revenue{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* REVENUE MODAL DASHBOARD */
+    .modal{
+        padding: 100px 0 20px;
+    }
+    
+    .modal-dialog{
+        height: 510px;
+    }
+
+    /* Employee */
+    .header_menu_schedule div h3{
+        margin-left: 170px;
     }
 
 }
@@ -351,17 +485,53 @@ th, td {
     #dashboard_content{
         flex-grow: 1;
         background: #f4f4f5;
-        padding: 40px 20px 40px 20px;
+        padding: 20px 45px 35px 20px;
     }
 
-    #dashboard_content{
-        padding: 35px 20px 35px 20px;
-    }
-    
     .viewAppointment{
         height: 370px;
     }
 
+    /* REVENUE  DASHBOARD */
+    .container_earnings{
+        margin-bottom: 40px;
+    }
+
+    /* REVENUE MODAL DASHBOARD */
+    .modal{
+        padding: 130px 0 20px;
+    }
+    
+    .modal-dialog{
+        height: 645px;
+    }
+
+    /* Employee */
+
+    .header_menu_schedule{
+        display: flex;
+        align-items: center;
+        background: #ffffffbd;
+        padding: 15px 15px 0 15px;
+        box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.2);
+        margin-bottom: 100px;
+    }
+    
+    .header_menu_schedule div{
+        display: flex;
+        padding: 0;
+        height: 100%;
+    }
+    
+    .header_menu_schedule div h3{
+        margin-left: 70px;
+    }
+    
+    .button_add{
+        margin-left: 0;
+        text-align: center;
+        height: 40px;
+    }
 }
 
 /* Responsive styling for screens of at least 1020px */
@@ -401,6 +571,8 @@ th, td {
         background-color: white;
         padding: 20px 20px;
         border-radius: 6px;
+        border-radius: 6px;
+        box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.2);
     }
 
     .calendar {
@@ -416,6 +588,26 @@ th, td {
         flex: 1;
         height: 320px;
         border: 1px solid #c9c9c999;
+    }
+
+    /* REVENUE  DASHBOARD */
+    .body_revenue{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 30px;
+    }
+
+    .container_earnings{
+        margin-bottom: 0;
+    }
+
+    /* REVENUE MODAL DASHBOARD */
+    .modal{
+        padding: 10px 0 20px;
+    }
+    
+    .modal-dialog{
+        height: 510px;
     }
 
 }

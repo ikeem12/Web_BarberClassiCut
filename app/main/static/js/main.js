@@ -103,8 +103,10 @@ if(calendar){
  */
 
 function highlightAppointmentsLink() {
+
     const appoinmentsLink = document.querySelectorAll('.appoinmentsLink');
     appoinmentsLink.forEach(link => link.classList.add('active'))
+    
 }
 
 // Call to the function to highlight appoinments links when loading the page.
@@ -118,15 +120,24 @@ highlightAppointmentsLink()
  * @param {HTMLElement} element - The element that has been clicked to activate the section.
 */
 
-import { sectionAppoinment } from "./templatesDinamics.js";
+import { sectionAppoinment, sectionRevenue, sectionSetting } from "./templatesDinamics.js";
 
 function reloadContent(section, element){
-    const dashboard_content = document.getElementById('dashboard_content')
+
+    const dashboard_content = document.getElementById('dashboard_content');
+
+    const bsOffcanvas = bootstrap.Offcanvas.getInstance('#staticBackdrop');
 
     const links = document.querySelectorAll('.container_links_nav_dashboard li');
 
     // Select all dashboard navigation links and remove the 'active' class.
-    links.forEach(link => link.classList.remove('active'));
+    links.forEach(link => {
+        link.classList.remove('active');
+        // close offcanvas
+        if(bsOffcanvas){
+            bsOffcanvas.hide();
+        }             
+    });
 
     // Cleans the dashboard contents.
     dashboard_content.innerHTML = ''
@@ -135,21 +146,22 @@ function reloadContent(section, element){
     switch (section){
         case 'appoinments':
             element.classList.add('active');
-            dashboard_content.innerHTML = sectionAppoinment
+            dashboard_content.innerHTML = sectionAppoinment;
             // the calendar function is called
             Calendar()
             break
         case 'revenues':
             // The active class is added
             element.classList.add('active');
-            dashboard_content.innerHTML = `sdfsdfsdfdsfdsf`
+            dashboard_content.innerHTML = sectionRevenue;
             break
         case 'settings':
             // The active class is added
             element.classList.add('active');
-            dashboard_content.innerHTML = `sdfdsfsdfsddsf`
+            dashboard_content.innerHTML = sectionSetting;                
             break
     }
+
 }
 
 // Expose the reloadContent function to the global scope
